@@ -11,7 +11,7 @@ Dockerfile [ci-and-cd/docker-bionic-rust on Github](https://github.com/ci-and-cd
 
 ```dockerfile
 
-FROM alpine:3.7
+FROM cirepo/nix:2.0.4_bionic
 COPY --from=cirepo/bionic-rust:stable-archive /data/root /
 
 ```
