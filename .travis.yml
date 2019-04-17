@@ -15,9 +15,10 @@ env:
   - IMAGE_ARG_APT_MIRROR=archive.ubuntu.com
   - IMAGE_ARG_FILESERVER=
   matrix:
-  - IMAGE_ARG_RUST_CHANNEL=beta
-  - IMAGE_ARG_RUST_CHANNEL=stable
-  - IMAGE_ARG_RUST_CHANNEL=nightly
+  - IMAGE_ARG_RUST_VERSION=beta
+  - IMAGE_ARG_RUST_VERSION=nightly
+  - IMAGE_ARG_RUST_VERSION=stable
+  - IMAGE_ARG_RUST_VERSION=1.33.0
 
 group: edge
 #install: true

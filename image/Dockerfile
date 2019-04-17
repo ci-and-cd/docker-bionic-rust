@@ -2,15 +2,15 @@
 FROM cirepo/nix:2.2.1-bionic
 
 
-ARG IMAGE_ARG_RUST_CHANNEL
+ARG IMAGE_ARG_RUST_VERSION
 
 
 ## install rust for current user
 RUN curl https://sh.rustup.rs -o rustup-init.sh \
     && chmod +x ./rustup-init.sh \
-    && sh ./rustup-init.sh --default-toolchain ${IMAGE_ARG_RUST_CHANNEL:-stable} -y \
+    && sh ./rustup-init.sh --default-toolchain none -y \
     && . ~/.cargo/env \
-    && rustup default ${IMAGE_ARG_RUST_CHANNEL:-stable} \
+    && rustup default ${IMAGE_ARG_RUST_VERSION:-1.33.0} \
     && rm -f ./rustup-init.sh \
     && rustup target add aarch64-apple-ios \
     && rustup target add aarch64-linux-android \

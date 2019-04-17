@@ -10,8 +10,8 @@ services:
       - IMAGE_ARG_APT_MIRROR=${IMAGE_ARG_APT_MIRROR:-mirrors.163.com}
       - IMAGE_ARG_FILESERVER=${IMAGE_ARG_FILESERVER}
       #- IMAGE_ARG_FILESERVER=${IMAGE_ARG_FILESERVER:-http://fileserver.infra.top}
-      - IMAGE_ARG_RUST_CHANNEL=${IMAGE_ARG_RUST_CHANNEL:-stable}
-    image: ${IMAGE_PREFIX:-cirepo/}${IMAGE_NAME:-rust}:${IMAGE_TAG:-stable-bionic}
+      - IMAGE_ARG_RUST_VERSION=${IMAGE_ARG_RUST_VERSION:-1.33.0}
+    image: ${IMAGE_PREFIX:-cirepo/}${IMAGE_NAME:-rust}:${IMAGE_TAG:-1.33.0-bionic}
   #docker-compose build dumper
   dumper:
     build:
@@ -23,4 +23,4 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_archive
-    image: ${IMAGE_PREFIX:-cirepo/}${IMAGE_NAME:-rust}:${IMAGE_TAG:-stable-bionic}-archive
+    image: ${IMAGE_PREFIX:-cirepo/}${IMAGE_NAME:-rust}:${IMAGE_TAG:-1.33.0-bionic}-archive

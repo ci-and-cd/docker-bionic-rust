@@ -11,7 +11,7 @@ if [[ -n "${CI_OPT_DOCKER_REGISTRY_PASS}" ]] && [[ -n "${CI_OPT_DOCKER_REGISTRY_
 
 export IMAGE_PREFIX=${IMAGE_PREFIX:-cirepo/};
 export IMAGE_NAME=${IMAGE_NAME:-rust}
-export IMAGE_TAG=${IMAGE_ARG_RUST_CHANNEL:-stable}-bionic
+export IMAGE_TAG=${IMAGE_ARG_RUST_VERSION:-1.33.0}-bionic
 if [[ "${TRAVIS_BRANCH}" != "master" ]]; then export IMAGE_TAG=${IMAGE_TAG}-SNAPSHOT; fi
 
 # Build image
